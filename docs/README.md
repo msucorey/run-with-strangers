@@ -41,29 +41,26 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: City Model, API, and components (2 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**Objective:** Cities can be selected, rendered, and switched through City Selector and then dynamically rendered in City View.
 
-### Phase 3: Notebooks (2 days)
+### Phase 3: Event Model, API, and components (2 days)
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Objective:** Events can be generated, joined, wait-listed, and conditionally render based on city.
 
-### Phase 4: Tags (1 day)
+### Phase 4: Host functionality (1 day)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Users can become hosts logic updates for conditional rendering of both hosts in the city view and events in the host view.
 
-### Phase 5: Allow Complex Styling in Notes (1 day, W2 Th 6pm)
+### Phase 5: Dashboard operational (1 day, W2 Th 6pm)
 
-**Objective:** Allow rich text editing of notes.
+**Objective:** Dashboard reflects both joined and hosted events and conditionally renders based on user status (host or regular user).
 
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
+### Phase 6: - Final pixel perfectionation (1 day, W2 F 6pm)
 
-**Objective:** Add infinite scroll to Notes Index
+**Objective:** Achieve >90% faithfulness to original both look and feel for all required use cases.
 
 ### Bonus Features (TBD)
-- [ ] Search notes by content
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+- [ ] Google Map API
+- [ ] Suggestions based on event details and user profiles

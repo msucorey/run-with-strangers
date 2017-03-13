@@ -7,29 +7,39 @@
   forms: {
     signUp: {errors: []},
     logIn: {errors: []},
-    createNote: {errors: ["body can't be blank"]}
   },
-  notes: {
-    1: {
-      title: "Sample State",
-      body: "is useful to plan",
-      author_id: 1,
-      notebook_id: 1
-      tags: {
-        1: {
-          id: 1
-          name: "Coding"
-        }
+  city: {
+    id: 1,
+    name: "SF / Bay Area",
+    image_url: "www.some.url",
+    is_major: true,
+    hosts: {
+      1: {
+        id: 1,
+        name: "Jane"
       }
     }
   },
-  notebooks: {
+  hostDetail: {
     1: {
-      title: "Redux",
+      id: 1
+      name: "Jane",
       author_id: 1,
-      description: "is cool"
+      host_image_url: "www.some.url",
+      host_intro: "big long string",
+      facebook_url: "www.facebook.com/jane_profile",
+      twitter_url: "www.twitter.com/janeruns"
     }
   }
-  tagFilters: [1, 7, 14] // Used to track selected Tags for filtering of notes
+  events: {
+    1: {
+      id: 1,
+      user_id: 1,
+      details: "event details",
+      address: "some address",
+      date: "date text",
+      time: "time text"
+    }
+  }
 }
 ```
