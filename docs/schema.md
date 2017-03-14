@@ -8,12 +8,12 @@ username        | string    | not null
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
-city_id         | integer   | not null, indexed
+city_id         | integer   | 
 is_host         | boolean   | not null
 host_image_url  | string    |
 host_intro      | text      |
-facebook_url    | text      |
-twitter_url     | text      |
+facebook_url    | string      |
+twitter_url     | string      |
 
 ## cities
 column name | data type | details
@@ -27,7 +27,7 @@ image_url        | string      | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id   | integer   | not null, foreign key (references users), indexed
+host_id   | integer   | not null, foreign key (references users(as hosts)), indexed
 details       | string    | not null
 address       | string    | not null
 date | string    | not null

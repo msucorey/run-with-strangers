@@ -5,7 +5,7 @@
 [Trello link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]: TODO
+[trello]: https://trello.com/b/MJUhZoeL/full-stack-project-run-with-strangers
 
 ## Minimum Viable Product
 

@@ -44,3 +44,7 @@
 - `POST /api/cities/:id/hosts/:id/events/:id`
 - `PATCH /api/cities/:id/hosts/:id/events/:id`
 - `DELETE /api/cities/:id/hosts/:id/events/:id`
+
+- `GET /api/events/:id`
+- `POST /api/events/:id`
+- `PATCH /api/events/:id`
