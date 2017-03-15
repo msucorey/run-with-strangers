@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { login, logout, signup } from '../../actions/session_actions';
+import { login, logout, signup, demo } from '../../actions/session_actions';
 import AuthForm from './auth_form';
 
 const mapStateToProps = ({ session }) => {
@@ -16,6 +16,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
 
   return {
     processForm: user => dispatch(processForm(user)),
+    demo: () => dispatch(demo()),
     formType,
     logout: () => dispatch(logout())
   };

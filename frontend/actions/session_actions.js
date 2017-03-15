@@ -18,6 +18,10 @@ export const logout = () => dispatch => (
   APIUtil.logout().then(user => dispatch(receiveCurrentUser(null)))
 );
 
+export const demo = () => dispatch => (
+  APIUtil.demo().then(user => dispatch(receiveCurrentUser(user)))
+);
+
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser

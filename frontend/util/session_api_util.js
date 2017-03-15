@@ -14,6 +14,14 @@ export const login = (user) => {
   });
 };
 
+export const demo = () => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/session',
+    data: { user: {email: "guest@rws.com", password: "password"} }
+  });
+};
+
 export const logout = () => {
   return $.ajax({
     method: 'delete',

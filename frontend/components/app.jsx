@@ -8,7 +8,6 @@ const App = ({ children }) => (
       <Link to="/" className="header-link">
         <h1>Run With Strangers</h1>
       </Link>
-      <HomeScrollContainer />
     </header>
     {children}
   </div>

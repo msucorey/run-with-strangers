@@ -4,8 +4,9 @@ import { Link, withRouter } from 'react-router';
 class AuthForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { email: "", password: "" };
+		this.state = { username: "", email: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.guestLogin = this.guestLogin.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -30,6 +31,11 @@ class AuthForm extends React.Component {
 		this.props.processForm({user});
 	}
 
+	guestLogin(e) {
+		e.preventDefault();
+		this.props.demo();
+	}
+
 	navLink() {
 		if (this.props.formType === "login") {
 			return <Link to="/signup">sign up instead</Link>;
@@ -50,16 +56,30 @@ class AuthForm extends React.Component {
 		);
 	}
 
+
+
 	render() {
+
+		const usernameText = this.props.formType === "login" ? null : (
+			<div>
+				<br/>
+				<label> Username:
+					<input type="text"
+						value={this.state.username}
+						onChange={this.update("username")}
+						className="login-input" />
+				</label>
+			</div>
+		);
+
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					Welcome to auth form test message!
 					<br/>
 					Please {this.props.formType} or {this.navLink()}
 					{this.renderErrors()}
+					{usernameText}
 					<div className="login-form">
-						<br/>
 						<label> Email:
 							<input type="text"
 								value={this.state.email}
@@ -76,7 +96,7 @@ class AuthForm extends React.Component {
 						<br/>
 						<input type="submit" value="Submit" />
 						<br/>
-						<button className="header-button" onClick={this.props.logout}>Log Out</button>
+						<button onClick={this.guestLogin}>Guest Login</button>
 					</div>
 				</form>
 			</div>
