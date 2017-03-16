@@ -41,8 +41,8 @@
 |-------|-------------|
 | "/signup" | "AuthFormContainer" |
 | "/login" | "AuthFormContainer" |
-| "/home" | "HomeContainer" |
-| "/home/city" | "CityContainer" |
-| "/home/city/:cityId" | "CityContainer" |
-| "/home/city/:cityId/host/:hostId" | "HostContainer" |
+| "/" (index route) | "HomeContainer" |
+| "/city" | "CityContainer" |
+| "/city/:cityId" | "CityContainer" |
+| "/city/:cityId/host/:hostId" | "HostContainer" |
 | "/dashboard" | "DashboardContainer" |

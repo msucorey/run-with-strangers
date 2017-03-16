@@ -9,6 +9,7 @@ class NavBar extends React.Component {
 		this.guestLogin = this.guestLogin.bind(this);
 		this.signUp = this.signUp.bind(this);
 		this.signIn = this.signIn.bind(this);
+		this.goCities = this.goCities.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -34,6 +35,11 @@ class NavBar extends React.Component {
 		this.props.demo();
 	}
 
+	goCities(e) {
+		e.preventDefault();
+		this.props.router.push("/cities");
+	}
+
 	render() {
 
     const aboutButton = this.props.loggedIn ? null : (
@@ -43,7 +49,7 @@ class NavBar extends React.Component {
       <li><button onClick={this.signIn}>SIGN IN</button></li>
     );
     const signUpButton = this.props.loggedIn ? null : (
-      <li><button onClick={this.signUp}>SIGN UP</button></li>
+      <li><button className="signup-button" onClick={this.signUp}>SIGN UP</button></li>
     );
     const guestLoginButton = this.props.loggedIn ? null : (
       <li><button onClick={this.guestLogin}>GUEST LOGIN</button></li>
@@ -64,7 +70,7 @@ class NavBar extends React.Component {
         </div>
         <div className="right-nav">
           <ul>
-            <li><button>CITIES</button></li>
+            <li><button onClick={this.goCities}>CITIES</button></li>
             <li><button>HOSTING</button></li>
             {aboutButton}
             {signInButton}

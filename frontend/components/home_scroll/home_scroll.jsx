@@ -21,7 +21,11 @@ const personalGreeting = (currentUser, logout) => (
 );
 
 const HomeScroll = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+  <div>
+  {currentUser ? personalGreeting(currentUser, logout) : sessionLinks()}
+  <button>SIGN UP</button>
+  <h3>even more stuff</h3>
+  </div>
 );
 
 export default HomeScroll;
