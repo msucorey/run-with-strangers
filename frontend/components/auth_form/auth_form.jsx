@@ -69,34 +69,39 @@ class AuthForm extends React.Component {
 						value={this.state.username}
 						onChange={this.update("username")}
 						className="auth-input"
-						placeholder="username" />
+						placeholder="First name (or nickname)" />
 			</div>
 		);
+
+		const greetingText = this.props.formType === "login" ?
+		"Hey stranger!" : "Join for run time";
+		const inviteText = this.props.formType === "login" ?
+		"It's good to have you back.  Sign in here and sign up for your next run time!" : "Thousands of strangers across the world have run together for conversation.  We can't wait for you to join them.";
 
 		return (
 			<div className="auth-form">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					<h2 className="auth-greeting">Hey stranger!</h2>
-					<p>It's good to have you back.  Sign in here and sign up for
-						your next run time!</p>
-					<p className="auth-error-text">{this.renderErrors()}</p>
+					<h2 className="auth-greeting">{greetingText}</h2>
+					<p>{inviteText}</p>
+					<h5 className="auth-error-text">{this.renderErrors()}</h5>
 					{usernameText}
 					<br/>
 					<div className="login-form">
 						<input className="auth-input" type="text"
 							value={this.state.email}
 							onChange={this.update("email")}
-							placeholder="email" />
+							placeholder="Email address" />
 						<br/>
 							<input className="auth-input" type="password"
 								value={this.state.password}
 								onChange={this.update("password")}
-								placeholder="password"/>
+								placeholder="Password"/>
 						<br/>
 						<input className="auth-submit" type="submit"
 							value="Submit"/>
 						<br/>
-						<p className="auth-bottom-text">Please {this.props.formType} or {this.navLink()}</p>
+						<p className="auth-bottom-text">
+							Please {this.props.formType} or {this.navLink()}</p>
 					</div>
 				</form>
 			</div>
