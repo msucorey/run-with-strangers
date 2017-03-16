@@ -38,9 +38,9 @@ class AuthForm extends React.Component {
 
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link to="/signup">sign up instead</Link>;
+			return <Link className="auth-link" to="/signup">sign up instead</Link>;
 		} else {
-			return <Link to="/login">log in instead</Link>;
+			return <Link className="auth-link" to="/login">log in instead</Link>;
 		}
 	}
 
@@ -73,12 +73,13 @@ class AuthForm extends React.Component {
 		);
 
 		return (
-			<div className="login-form-container">
+			<div className="auth-form">AuthFormContainer
 				<form onSubmit={this.handleSubmit} className="login-form-box">
 					<br/>
 					Please {this.props.formType} or {this.navLink()}
 					{this.renderErrors()}
 					{usernameText}
+					<br/>
 					<div className="login-form">
 						<label> Email:
 							<input type="text"
@@ -95,8 +96,6 @@ class AuthForm extends React.Component {
 						</label>
 						<br/>
 						<input type="submit" value="Submit" />
-						<br/>
-						<button onClick={this.guestLogin}>Guest Login</button>
 					</div>
 				</form>
 			</div>
