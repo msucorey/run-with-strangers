@@ -1,8 +1,61 @@
 .auth-form {
-  background-color: brown;
+  background-color: #FAF6E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.auth-greeting {
+  color: #C93C10;
 }
 
 .auth-link {
   color: blue;
   font-weight: bold;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-input {
+  display: block;
+  margin: 0 0 0.8125em 0;
+  padding: 1em;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: none;
+  border: 1px solid #DDD;
+  height: 30px;
+  font-size: 18px;
+}
+
+.auth-submit {
+  background-color: #C93C10;
+  border: 2px solid yellow;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1em 1.5em;
+  margin: 0 0 0.8125em 0;
+  letter-spacing: 2px;
+  text-decoration: none;
+  align: center;
+  width: 105%
+}
+
+.auth-error-text {
+  font-weight: bold;
+  color: red;
+}
+
+.auth-bottom-text {
+  color: #C93C10;
+  text-align: center;
+  font-size: 18px;
 }

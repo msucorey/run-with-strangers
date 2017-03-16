@@ -38,9 +38,11 @@ class AuthForm extends React.Component {
 
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link className="auth-link" to="/signup">sign up instead</Link>;
+			return <Link className="auth-link" to="/signup">sign
+				up instead</Link>;
 		} else {
-			return <Link className="auth-link" to="/login">log in instead</Link>;
+			return <Link className="auth-link" to="/login">log
+				in instead</Link>;
 		}
 	}
 
@@ -63,39 +65,38 @@ class AuthForm extends React.Component {
 		const usernameText = this.props.formType === "login" ? null : (
 			<div>
 				<br/>
-				<label> Username:
 					<input type="text"
 						value={this.state.username}
 						onChange={this.update("username")}
-						className="login-input" />
-				</label>
+						className="auth-input"
+						placeholder="username" />
 			</div>
 		);
 
 		return (
-			<div className="auth-form">AuthFormContainer
+			<div className="auth-form">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					<br/>
-					Please {this.props.formType} or {this.navLink()}
-					{this.renderErrors()}
+					<h2 className="auth-greeting">Hey stranger!</h2>
+					<p>It's good to have you back.  Sign in here and sign up for
+						your next run time!</p>
+					<p className="auth-error-text">{this.renderErrors()}</p>
 					{usernameText}
 					<br/>
 					<div className="login-form">
-						<label> Email:
-							<input type="text"
-								value={this.state.email}
-								onChange={this.update("email")}
-								className="login-input" />
-						</label>
+						<input className="auth-input" type="text"
+							value={this.state.email}
+							onChange={this.update("email")}
+							placeholder="email" />
 						<br/>
-						<label> Password:
-							<input type="password"
+							<input className="auth-input" type="password"
 								value={this.state.password}
 								onChange={this.update("password")}
-								className="login-input" />
-						</label>
+								placeholder="password"/>
 						<br/>
-						<input type="submit" value="Submit" />
+						<input className="auth-submit" type="submit"
+							value="Submit"/>
+						<br/>
+						<p className="auth-bottom-text">Please {this.props.formType} or {this.navLink()}</p>
 					</div>
 				</form>
 			</div>
