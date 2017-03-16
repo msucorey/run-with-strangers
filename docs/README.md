@@ -1,6 +1,6 @@
 # Run With Strangers
 
-[Heroku link][heroku] **Note:** This should be a link to your production site
+[Heroku link][heroku]
 
 [Trello link][trello]
 
@@ -16,7 +16,7 @@ sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Production README [sample](docs/production_readme.md)
+- [ ] Production README
 - [ ] Choose city
 - [ ] Host event
 - [ ] Join event in your city
@@ -29,7 +29,7 @@ sufficient CSS styling:
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
+[wireframes]: /wireframes
 [components]: component-hierarchy.md
 [sample-state]: sample-state.md
 [api-endpoints]: api-endpoints.md
