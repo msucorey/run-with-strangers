@@ -1,1 +1,1 @@
-json.array! @cities, :id, :name, :is_major, :image_url
+json.array! @cities, :id, :name, :image_url

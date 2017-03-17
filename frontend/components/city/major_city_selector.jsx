@@ -9,17 +9,15 @@ class MajorCitySelector extends React.Component {
 
 	componentDidMount() {
     this.props.fetchCities();
-    debugger
 	}
 
 	render() {
 		return (
-			<div className="maj-cit-sel">
-        city names
+			<ul className="maj-cit-sel">
         {this.props.cities.map(city =>
-          <CityThumb key={city.id} city={city} />
+          <CityThumb key={city.id} city={city} user={this.props.user}/>
         )}
-			</div>
+			</ul>
     );
 	}
 

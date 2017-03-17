@@ -4,9 +4,8 @@ import {
 } from '../actions/city_actions';
 import merge from 'lodash/merge';
 
+
 const CityReducer = (state = [], action) => {
-  Object.freeze(state);
-  let errors = [];
   switch(action.type) {
     case RECEIVE_CITIES:
       return action.cities;

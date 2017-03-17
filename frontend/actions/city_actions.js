@@ -1,10 +1,10 @@
 import * as APIUtil from '../util/city_api_util';
-export const RECEIVE_CITIES = "RECEIVE_CURRENT_USER";
-export const RECEIVE_CITY = "RECEIVE_ERRORS";
+export const RECEIVE_CITIES = "RECEIVE_CITIES";
+export const RECEIVE_CITY = "RECEIVE_CITY";
 
 export const fetchCities = () => dispatch => (
   APIUtil.cities()
-    .then(() => dispatch(receiveCities()))
+    .then((xcities) => dispatch(receiveCities(xcities)))
 );
 
 export const fetchCity = id => dispatch => (

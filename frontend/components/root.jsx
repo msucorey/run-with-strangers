@@ -24,7 +24,6 @@ const Root = ({ store }) => {
   };
 
   const _clearErrors = () => {
-    console.log("clearing errors");
     if (store.getState().session.errors &&
     store.getState().session.errors.length > 0) {
       store.dispatch(clearErrors());
@@ -40,8 +39,7 @@ const Root = ({ store }) => {
             onEnter={_redirectIfLoggedIn} onLeave={_clearErrors} />
           <Route path="/signup" component={ AuthFormContainer }
             onEnter={_redirectIfLoggedIn} onLeave={_clearErrors}/>
-          <Route path="/cities" component={CitySelectorView}
-            onEnter={_redirectIfLoggedIn} />
+          <Route path="/cities" component={CitySelectorView} />
         </Route>
       </Router>
     </Provider>

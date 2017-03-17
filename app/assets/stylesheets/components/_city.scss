@@ -12,6 +12,11 @@
 .city-selector-view h2 {
   color: #C93C10;
   text-align: center;
+  justify-content: center;
+}
+
+.maj-cit-sel {
+  display: flex;
 }
 
 .city-top-text {
@@ -26,10 +31,28 @@
 
 .major-city-container {
   text-align: center;
-  width: 600px;
+  width: auto;
 }
 
 .minor-city-menu {
   width: 600px;
+}
 
+.city-image {
+  height: 160px;
+  width: 300px;
+}
+
+.city-thumb {
+  position: relative;
+}
+
+.city-thumb h2 {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
 }

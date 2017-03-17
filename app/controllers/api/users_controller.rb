@@ -11,6 +11,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find_by_email(params[:user][:email])
+    if @user.update_attributes(user_params)
+      render "api/users/show"
+    else
+      render json: ["Update unsuccessful"], status: 401
+    end
+  end
+
   private
 
   def user_params

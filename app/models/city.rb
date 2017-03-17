@@ -12,7 +12,7 @@
 
 class City < ApplicationRecord
 
-  validates :name, :is_major, presence: true
+  validates :name, presence: true
 
   has_many :users
 
