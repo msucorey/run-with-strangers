@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  city_id         :integer
+#  is_host         :boolean
+#  host_image_url  :string
+#  host_intro      :text
+#  facebook_url    :string
+#  twitter_url     :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
 
   attr_reader :password
@@ -9,7 +28,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
-  # relations TODO
+  belongs_to :city, optional: true
 
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)
