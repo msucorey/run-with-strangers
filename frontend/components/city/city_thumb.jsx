@@ -15,7 +15,6 @@ class CityThumb extends React.Component {
   updateCityId(e) {
     e.preventDefault();
     // this.props.fetchCity(this.state.city_id);
-    console.log("upating city id");
     const user = this.state;
     this.props.fetchCity(this.state.city_id).then(() => (
     $.ajax({
