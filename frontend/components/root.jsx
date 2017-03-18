@@ -5,6 +5,7 @@ import App from './app';
 import AuthFormContainer from './auth_form/auth_form_container';
 import HomeScrollContainer from './home_scroll/home_scroll_container';
 import CitySelectorView from './city/city_selector_view';
+import CityViewContainer from './city/city_view_container';
 import { clearErrors } from '../actions/session_actions';
 
 const Root = ({ store }) => {
@@ -30,6 +31,25 @@ const Root = ({ store }) => {
     }
   };
 
+  const _redirectIfHasCity = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/login'); //not logged in
+    } else if (currentUser.city_id) {
+      replace(`/cities/${currentUser.city_id}`);
+    }
+  };
+
+  const _redirectIfNoCity = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    const city = store.getState().cities.city;
+    if (!currentUser) {
+      replace('/login'); //not logged in
+    } else if (!city) {
+      replace('/cities');//no city chosen
+    }
+  };
+
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
@@ -39,7 +59,10 @@ const Root = ({ store }) => {
             onEnter={_redirectIfLoggedIn} onLeave={_clearErrors} />
           <Route path="/signup" component={ AuthFormContainer }
             onEnter={_redirectIfLoggedIn} onLeave={_clearErrors}/>
-          <Route path="/cities" component={CitySelectorView} />
+          <Route path="/cities" component={CitySelectorView}
+            onEnter={_redirectIfHasCity} />
+          <Route path="/cities/:cityId" component={CityViewContainer}
+            onEnter={_redirectIfNoCity} />
         </Route>
       </Router>
     </Provider>

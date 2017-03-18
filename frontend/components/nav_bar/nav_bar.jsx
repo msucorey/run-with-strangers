@@ -10,6 +10,7 @@ class NavBar extends React.Component {
 		this.signUp = this.signUp.bind(this);
 		this.signIn = this.signIn.bind(this);
 		this.goCities = this.goCities.bind(this);
+		this.logoutGoHome = this.logoutGoHome.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -40,6 +41,12 @@ class NavBar extends React.Component {
 		this.props.router.push("/cities");
 	}
 
+	logoutGoHome(e) {
+		e.preventDefault();
+		this.props.logout();
+		this.props.router.push("/");
+	}
+
 	render() {
 
     const aboutButton = this.props.loggedIn ? null : (
@@ -58,7 +65,7 @@ class NavBar extends React.Component {
       <li><button>DASHBOARD</button></li>
     ) : null;
     const logoutButton = this.props.loggedIn ? (
-      <li><button onClick={this.props.logout}>LOGOUT</button></li>
+      <li><button onClick={this.logoutGoHome}>LOGOUT</button></li>
     ) : null;
 
 		return (

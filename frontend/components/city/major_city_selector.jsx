@@ -15,7 +15,8 @@ class MajorCitySelector extends React.Component {
 		return (
 			<ul className="maj-cit-sel">
         {this.props.cities.map(city =>
-          <CityThumb key={city.id} city={city} user={this.props.user}/>
+          <CityThumb key={city.id} city={city}
+						fetchCity={this.props.fetchCity} user={this.props.user}/>
         )}
 			</ul>
     );

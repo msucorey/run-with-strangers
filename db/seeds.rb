@@ -2,7 +2,7 @@ User.delete_all
 User.create!(
   username: "guest",
   email: "guest@rws.com",
-  password: "password"
+  password: "password",
 )
 
 City.delete_all

@@ -5,7 +5,7 @@ class Api::CitiesController < ApplicationController
   end
 
   def show
-    @city = City.find_by_id(:id)
+    @city = City.find(params[:id])
   end
 
 end

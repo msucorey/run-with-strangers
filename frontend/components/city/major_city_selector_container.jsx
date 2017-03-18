@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
-import { fetchCities } from '../../actions/city_actions';
+import { fetchCities, fetchCity } from '../../actions/city_actions';
 import MajorCitySelector from './major_city_selector';
 
 const mapStateToProps = ({ cities, session }) => ({
-  cities,
+  cities: cities.cities,
   user: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchCities: () => dispatch(fetchCities())
+  fetchCities: () => dispatch(fetchCities()),
+  fetchCity:(id) => dispatch(fetchCity(id))
 });
 
 export default connect(

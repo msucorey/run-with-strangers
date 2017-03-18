@@ -4,13 +4,17 @@ import {
 } from '../actions/city_actions';
 import merge from 'lodash/merge';
 
+const defaultState = {
+  cities: [],
+  city: null
+};
 
-const CityReducer = (state = [], action) => {
+const CityReducer = (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_CITIES:
-      return action.cities;
+      return merge({}, state, { cities: action.cities });
     case RECEIVE_CITY:
-      return [action.city];
+      return merge({}, state, { city: action.city });
     default:
       return state;
   }

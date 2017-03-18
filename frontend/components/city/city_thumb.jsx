@@ -14,13 +14,14 @@ class CityThumb extends React.Component {
 
   updateCityId(e) {
     e.preventDefault();
+    this.props.fetchCity(this.state.city_id);
     console.log("upating city id");
     const user = this.state;
     $.ajax({
       method: 'PATCH',
       url: '/api/user',
       data: { user }
-    });
+    }).then(this.props.router.push(`/cities/${this.props.city.id}`));
   }
 
   render() {
@@ -29,7 +30,7 @@ class CityThumb extends React.Component {
         <img onClick={this.updateCityId}
           className="city-image"
           src={this.props.city.image_url} />
-        <h2>{this.props.city.name}</h2>
+        <h2 onClick={this.updateCityId}>{this.props.city.name}</h2>
       </li>
     );
   }
