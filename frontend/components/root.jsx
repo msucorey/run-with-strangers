@@ -33,10 +33,11 @@ const Root = ({ store }) => {
 
   const _redirectIfHasCity = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
+    const city = store.getState().cities.city;
     if (!currentUser) {
       replace('/login'); //not logged in
-    } else if (currentUser.city_id) {
-      replace(`/cities/${currentUser.city_id}`);
+    } else if (city) {
+      replace(`/cities/${city.id}`);
     }
   };
 

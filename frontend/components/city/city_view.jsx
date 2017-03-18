@@ -8,7 +8,11 @@ class CityView extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCity(this.props.user.city_id);
+    if (this.props.city) {
+      //do nothing
+    } else {
+      this.props.fetchCity(this.props.user.city_id);
+    }
   }
 
 
