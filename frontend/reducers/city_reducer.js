@@ -1,6 +1,7 @@
 import {
   RECEIVE_CITY,
-  RECEIVE_CITIES
+  RECEIVE_CITIES,
+  RESET_STATE
 } from '../actions/city_actions';
 import merge from 'lodash/merge';
 
@@ -15,6 +16,9 @@ const CityReducer = (state = defaultState, action) => {
       return merge({}, state, { cities: action.cities });
     case RECEIVE_CITY:
       return merge({}, state, { city: action.city });
+    case RESET_STATE:
+      console.log("resetting state");
+      return defaultState;
     default:
       return state;
   }

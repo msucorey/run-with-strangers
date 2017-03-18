@@ -1,0 +1,50 @@
+$lightest-gray: #f7f7f5;
+$light-gray: #e2e2e2;
+$gray: #999;
+$dark-gray: #6f6f6f;
+
+$lightest-blue: #f0f8fc;
+$light-blue: #6288a5;
+$blue: #326891;
+$dark-blue: #4d7b9f;
+$darkest-blue: #265e8b;
+
+.city-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background: $lightest-gray;
+  border: 10px;
+}
+
+.big-city {
+  position: relative;
+}
+
+.big-city h2 {
+  position: absolute;
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+  left: 0;
+  top: 150px;
+  text-align: center;
+  width: 100%;
+}
+
+.big-city-image {
+  height: 300px;
+}
+
+.chg-home-city {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50px;
+  margin: 20px;
+  text-align: center;
+  background: $light-blue;
+  color: white;
+}

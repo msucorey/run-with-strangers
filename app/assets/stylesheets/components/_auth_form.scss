@@ -1,5 +1,16 @@
+$lightest-gray: #f7f7f5;
+$light-gray: #e2e2e2;
+$gray: #999;
+$dark-gray: #6f6f6f;
+
+$lightest-blue: #f0f8fc;
+$light-blue: #6288a5;
+$blue: #326891;
+$dark-blue: #4d7b9f;
+$darkest-blue: #265e8b;
+
 .auth-form {
-  background-color: #FAF6E8;
+  background-color: $light-gray;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,12 +18,13 @@
 }
 
 .auth-greeting {
-  color: #C93C10;
+  color: $dark-blue;
 }
 
 .auth-link {
   color: blue;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .login-form {
@@ -33,7 +45,7 @@
 }
 
 .auth-submit {
-  background-color: #C93C10;
+  background-color: $light-blue;
   border-radius: 10px;
   color: white;
   display: inline-block;
@@ -54,7 +66,7 @@
 }
 
 .auth-bottom-text {
-  color: #C93C10;
+  color: $dark-blue;
   text-align: center;
   font-size: 18px;
 }

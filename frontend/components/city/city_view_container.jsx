@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchCity } from '../../actions/city_actions';
+import { fetchCity, clearCities } from '../../actions/city_actions';
 import CityView from './city_view';
 
 const mapStateToProps = ({ session, cities }) => ({
@@ -8,7 +8,8 @@ const mapStateToProps = ({ session, cities }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchCity: (id) => dispatch(fetchCity(id))
+  fetchCity: (id) => dispatch(fetchCity(id)),
+  clearCities: () => dispatch(clearCities())
 });
 
 export default connect(

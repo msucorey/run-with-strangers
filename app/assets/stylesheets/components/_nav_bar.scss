@@ -1,5 +1,16 @@
+$lightest-gray: #f7f7f5;
+$light-gray: #e2e2e2;
+$gray: #999;
+$dark-gray: #6f6f6f;
+
+$lightest-blue: #f0f8fc;
+$light-blue: #6288a5;
+$blue: #326891;
+$dark-blue: #4d7b9f;
+$darkest-blue: #265e8b;
+
 .nav-bar {
-  background-color: #C93C10;
+  background-color: $blue;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,11 +45,11 @@ button {
 	transition: background-color 0.3s;
 	font-family: sans-serif;
 	text-transform: uppercase;
-	font-size: 11px;
+	font-size: 12px;
 	text-align: center;
 }
 
 .signup-button {
   background-color: white;
-  color: orange;
+  color: $dark-blue;
 }

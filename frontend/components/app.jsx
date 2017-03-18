@@ -8,6 +8,9 @@ const App = ({ children }) => (
       <NavBarContainer />
     </header>
     {children}
+    <footer>footer placeholder with NavBar repeated
+      <NavBarContainer />
+    </footer>
   </div>
 );
 
