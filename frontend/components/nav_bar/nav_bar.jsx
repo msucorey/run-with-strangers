@@ -43,7 +43,7 @@ class NavBar extends React.Component {
 
 	logoutGoHome(e) {
 		e.preventDefault();
-		this.props.logout().then(() => this.props.router.push("/"));
+		this.props.logout().then(() => this.props.router.push("/login"));
 	}
 
 	render() {
@@ -70,8 +70,9 @@ class NavBar extends React.Component {
 		return (
 			<div className="nav-bar">
         <div className="left-nav">
-          <Link className="logo" to="/" className="header-link">
-            Icon + Run With Strangers
+					<img className="icon" src="http://res.cloudinary.com/appacademy/image/upload/v1489884292/rwsicon_lj2vxq.png" />
+          <Link className="logo" to="/">
+            Run With Strangers
           </Link>
         </div>
         <div className="right-nav">

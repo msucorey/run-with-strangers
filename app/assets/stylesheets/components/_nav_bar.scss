@@ -14,10 +14,11 @@ $darkest-blue: #265e8b;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 58px;
+  height: 75px;
 }
 
 .left-nav {
+  display: flex;
 	margin-left: 20px;
 	cursor: pointer;
 	font-weight: bold;
@@ -29,15 +30,22 @@ $darkest-blue: #265e8b;
 .right-nav > ul {
 	display: flex;
   align-content: center;
+  margin-right: 20px;
 }
 
 .logo {
-  font-size: 18px;
+  font-size: 24px;
   font-family: cursive;
+}
+
+.icon {
+  height: 6%;
+  width: 6%;
 }
 
 button {
 	background-color: inherit;
+  white-space: nowrap;
 	color: white;
 	font-weight: bold;
 	padding: 7px 9px;

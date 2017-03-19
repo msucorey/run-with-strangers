@@ -2,21 +2,43 @@ $lightest-gray: #f7f7f5;
 $light-gray: #e2e2e2;
 $gray: #999;
 $dark-gray: #6f6f6f;
-
 $lightest-blue: #f0f8fc;
 $light-blue: #6288a5;
 $blue: #326891;
 $dark-blue: #4d7b9f;
 $darkest-blue: #265e8b;
 
-.home-scroll {
-  background-color: $light-gray;
+.splash-graphic {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  height: 420px;
+  background-image: url(http://res.cloudinary.com/appacademy/image/upload/v1489883471/rws_d24o9k.jpg);
+  background-size: cover;
+}
+
+.splash-text{
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+.splash-text h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.splash-text span {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .lets-run-btn {
   background-color: $light-blue;
   border-radius: 10px;
   margin-left: 20px;
+  margin-bottom: 100px;
   color: white;
   display: inline-block;
   font-size: 18px;
@@ -27,5 +49,15 @@ $darkest-blue: #265e8b;
   letter-spacing: 2px;
   text-decoration: none;
   align: center;
-  width: 75%
+  width: 50%
+}
+
+.mid-page-content {
+  display: flex;
+  flex-direction: column;
+  background-color: $light-gray;
+}
+
+.mid-page-content h1 {
+  background-color: $light-gray;
 }

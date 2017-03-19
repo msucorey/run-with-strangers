@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import NavBarContainer from './nav_bar/nav_bar_container';
+import Footer from './footer/footer';
 
 const App = ({ children }) => (
   <div>
@@ -8,9 +9,7 @@ const App = ({ children }) => (
       <NavBarContainer />
     </header>
     {children}
-    <footer>footer placeholder with NavBar repeated
-      <NavBarContainer />
-    </footer>
+    <Footer />
   </div>
 );
 
