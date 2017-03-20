@@ -1,7 +1,7 @@
-export const getEvents = () => {
+export const getEvents = (id) => {
   return $.ajax({
     method: 'GET',
-    url: 'api/events'
+    url: `api/cities/${id}/events`
   });
 };
 

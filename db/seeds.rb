@@ -13,6 +13,19 @@ City.create!(name: "CHICAGO", image_url: "https://d3qi0qp55mx5f5.cloudfront.net/
 City.create!(name: "NYC", image_url: "https://cdn.history.com/sites/2/2013/12/new-york-city-H.jpeg"
 )
 
+host_id = User.find_by_username("guest").id
+
+Event.delete_all
+Event.create!(details: "fast one", address: "my house", date: "2011-05-19", time: "10:30:14", host_id: host_id)
+
+# t.integer  "host_id",    null: false
+# t.string   "details",    null: false
+# t.string   "address",    null: false
+# t.date     "date",       null: false
+# t.time     "time",       null: false
+# t.datetime "created_at", null: false
+# t.datetime "updated_at", null: false
+
 # City.create!(name: "Toronto", is_major: true)
 # City.create!(name: "Los Angeles", is_major: false)
 # City.create!(name: "Philadelphia", is_major: true)

@@ -29,6 +29,8 @@ class User < ApplicationRecord
   # before_validation :ensure_session_token_uniqueness
 
   belongs_to :city, optional: true
+  has_many :events,
+    foreign_key: :host_id
 
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)

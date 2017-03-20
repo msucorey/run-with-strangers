@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router';
+import CityEventsContainer from './city_events_container';
 
 class CityView extends React.Component {
   //user, city, fetchCity, clearCities
@@ -49,7 +50,7 @@ class CityView extends React.Component {
               > change your home city here.</Link></li>
           </ul>
         </div>
-        <div>EventThumbs</div>
+        <CityEventsContainer />
         <h2>The host community is full of amazing stories.</h2>
         <p>How else would someone end up regularly bringing strangers together for</p>
         <p>conversations? Before each of them were invited to community, they were attendees</p>

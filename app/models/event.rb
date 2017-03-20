@@ -14,8 +14,13 @@
 
 class Event < ApplicationRecord
 
-  validates :details, :address, :date, :time, presnece: true
+  validates :details, :address, :date, :time, :host_id, presence: true
 
-  belongs_to :host
-  
+  belongs_to :user,
+    foreign_key: :host_id,
+    class_name: "User"
+
+  has_one :city,
+    through: :user
+
 end

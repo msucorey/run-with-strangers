@@ -3,8 +3,8 @@ export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const RECEIVE_EVENT = "RECEIVE_EVENT";
 export const RESET_STATE = "RESET_STATE";
 
-export const fetchEvents = () => dispatch => (
-  APIUtil.getEvents()
+export const fetchEvents = (id) => dispatch => (
+  APIUtil.getEvents(id)
     .then((xevents) => dispatch(receiveEvents(xevents)))
 );
 
