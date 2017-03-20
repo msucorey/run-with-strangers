@@ -48,3 +48,13 @@ $darkest-blue: #265e8b;
   background: $light-blue;
   color: white;
 }
+
+.city-events {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-tile {
+  width: 30%;
+  background: white;
+}

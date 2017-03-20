@@ -1,8 +1,8 @@
 class Api::EventsController < ApplicationController
 
   def index
-    @events = City.find_by_city_id(params[:city_id]).events
-    render "api/events"
+    @events = City.find(params[:city_id]).events
+    render "api/events/index"
   end
 
   def show

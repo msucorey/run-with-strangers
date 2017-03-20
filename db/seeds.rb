@@ -17,14 +17,8 @@ host_id = User.find_by_username("guest").id
 
 Event.delete_all
 Event.create!(details: "fast one", address: "my house", date: "2011-05-19", time: "10:30:14", host_id: host_id)
-
-# t.integer  "host_id",    null: false
-# t.string   "details",    null: false
-# t.string   "address",    null: false
-# t.date     "date",       null: false
-# t.time     "time",       null: false
-# t.datetime "created_at", null: false
-# t.datetime "updated_at", null: false
+Event.create!(details: "slow one", address: "your house", date: "2011-05-19", time: "10:30:14", host_id: host_id)
+Event.create!(details: "conversation jog", address: "Embarcadero", date: "2011-05-19", time: "10:30:14", host_id: host_id)
 
 # City.create!(name: "Toronto", is_major: true)
 # City.create!(name: "Los Angeles", is_major: false)

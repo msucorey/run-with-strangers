@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import EventTileContainer from '../event/event_tile_container';
 
 class CityEvents extends React.Component {
 	constructor(props) {
@@ -11,8 +12,17 @@ class CityEvents extends React.Component {
 	}
 
 	render() {
+
+		const cityEvents = (
+			this.props.events.map(event => (
+				<EventTileContainer event={event} key={event.id} />
+			))
+		);
+
 		return (
-			<div>CityEvents</div>
+			<div className="city-events">
+				{cityEvents}
+			</div>
     );
 	}
 
