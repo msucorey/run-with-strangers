@@ -6,6 +6,8 @@ import AuthFormContainer from './auth_form/auth_form_container';
 import HomeScrollContainer from './home_scroll/home_scroll_container';
 import CitySelectorView from './city/city_selector_view';
 import CityViewContainer from './city/city_view_container';
+import JoinHostContainer from './host/join_host_container';
+import CreateEventContainer from './host/create_event_container';
 import { clearErrors, refreshUser } from '../actions/session_actions';
 import { fetchCity} from '../actions/city_actions';
 
@@ -78,6 +80,8 @@ const Root = ({ store }) => {
             onEnter={_redirectIfHasCity} onLeave={_updateUser} />
           <Route path="/cities/:cityId" component={CityViewContainer}
             onEnter={_redirectIfNoCity} onLeave={_updateUser} />
+          <Route path="/hosting" component={ JoinHostContainer } />
+          <Route path="/hostrun" component={ CreateEventContainer } />
         </Route>
       </Router>
     </Provider>

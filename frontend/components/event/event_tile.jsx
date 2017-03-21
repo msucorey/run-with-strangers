@@ -7,18 +7,21 @@ class EventTile extends React.Component {
 		super(props);
 		this.state = {
       email: this.props.user.email,
-      run_date_ids: this.props.user.run_dates.map(Object => (Object.id))
+      run_date_ids: this.props.user.run_dates.map(Object => (Object.id)),
+			attendees: this.props.event.attendees.length
     };
     this.addRunDate = this.addRunDate.bind(this);
+    this.removeRunDate = this.removeRunDate.bind(this);
   }
 
   addRunDate(e) {
     e.preventDefault();
     let newList = this.state.run_date_ids;
 		newList.push(this.props.event.id);
+		this.state.attendees += 1;
 		const email = this.state.email;
 		this.setState({email: email, run_date_ids: newList});
-		const user = this.state;
+		const user = { email: this.state.email, run_date_ids: this.state.run_date_ids};
 		this.props.refreshUser(this.props.user.id);
     this.props.fetchEvent(this.props.event.id).then(() => (
     $.ajax({
@@ -28,6 +31,24 @@ class EventTile extends React.Component {
     })))
     .then(() => (this.props.router.push(`/cities`)));
   }
+
+	removeRunDate(e) {
+		e.preventDefault();
+		let newList = this.state.run_date_ids;
+		newList = newList.filter(el => (el !== this.props.event.id));
+		this.state.attendees -= 1;
+		const email = this.state.email;
+		this.setState({email: email, run_date_ids: newList});
+		const user = { email: this.state.email, run_date_ids: this.state.run_date_ids};
+		this.props.refreshUser(this.props.user.id);
+		this.props.fetchEvent(this.props.event.id).then(() => (
+		$.ajax({
+			method: 'PATCH',
+			url: '/api/user',
+			data: { user }
+		})))
+		.then(() => (this.props.router.push(`/cities`)));
+	}
 
 	componentDidMount() {
     this.props.fetchEvent(this.props.event.id);
@@ -46,11 +67,11 @@ class EventTile extends React.Component {
 
 		if (event) {
 			if (this.state.run_date_ids.includes(event.id)) {
-	    	button = <button>CANCEL BUTTON</button>;
+	    	button = <button onClick={this.removeRunDate}>CANCEL BUTTON{this.state.attendees}</button>;
 			} else if (event.attendees.length > 5) {
-				button = <button>FULL BUTTON{event.attendees.length}</button>;
+				button = <button>FULL BUTTON{this.state.attendees}</button>;
 			} else {
-				button = <button onClick={this.addRunDate}>JOIN BUTTON{event.attendees.length}</button>;
+				button = <button onClick={this.addRunDate}>JOIN BUTTON{this.state.attendees}</button>;
 			}
 		}
 

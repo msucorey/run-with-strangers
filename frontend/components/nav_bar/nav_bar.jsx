@@ -11,6 +11,7 @@ class NavBar extends React.Component {
 		this.signIn = this.signIn.bind(this);
 		this.goCities = this.goCities.bind(this);
 		this.logoutGoHome = this.logoutGoHome.bind(this);
+		this.goHosting = this.goHosting.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -47,6 +48,11 @@ class NavBar extends React.Component {
 		this.props.logout();
 	}
 
+	goHosting(e) {
+		e.preventDefault();
+		this.props.router.push("/hosting");
+	}
+
 	render() {
 
     const aboutButton = this.props.loggedIn ? null : (
@@ -67,6 +73,9 @@ class NavBar extends React.Component {
     const logoutButton = this.props.loggedIn ? (
       <li><button onClick={this.logoutGoHome}>LOGOUT</button></li>
     ) : null;
+		const hostingButton = (
+			<li><button onClick={this.goHosting}>HOSTING</button></li>
+		);
 
 		return (
 			<div className="nav-bar">
@@ -79,7 +88,7 @@ class NavBar extends React.Component {
         <div className="right-nav">
           <ul>
             <li><button onClick={this.goCities}>CITIES</button></li>
-            <li><button>HOSTING</button></li>
+            {hostingButton}
             {aboutButton}
             {signInButton}
             {signUpButton}
