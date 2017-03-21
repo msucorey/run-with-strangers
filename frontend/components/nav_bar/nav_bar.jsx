@@ -43,6 +43,7 @@ class NavBar extends React.Component {
 
 	logoutGoHome(e) {
 		e.preventDefault();
+		this.props.clearCities();
 		this.props.logout();
 	}
 

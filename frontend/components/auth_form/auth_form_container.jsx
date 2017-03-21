@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import { login, logout, signup, demo } from '../../actions/session_actions';
+import { fetchCity } from '../../actions/city_actions';
 import AuthForm from './auth_form';
 
 const mapStateToProps = ({ session }) => {
   let currentErrors = session.errors || [];
   return {
   loggedIn: Boolean(session.currentUser),
-  errors: currentErrors
+  errors: currentErrors,
+  currentUser: session.currentUser
   };
 };
 
@@ -18,7 +20,8 @@ const mapDispatchToProps = (dispatch, { location }) => {
     processForm: user => dispatch(processForm(user)),
     demo: () => dispatch(demo()),
     formType,
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchCity: (id) => dispatch(fetchCity(id))
   };
 };
 

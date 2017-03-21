@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { fetchEvent } from '../../actions/event_actions';
 import EventTile from './event_tile';
 
-const mapStateToProps = ({ session }) => ({
-  user: session.currentUser,
+const mapStateToProps = ({ session , events }) => ({
+  user: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

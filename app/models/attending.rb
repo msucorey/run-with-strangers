@@ -12,7 +12,7 @@
 
 class Attending < ApplicationRecord
 
-  validates :user_id, :event_id, :status, presence: true
+  validates :user_id, :event_id, presence: true
 
   belongs_to :user
   belongs_to :event

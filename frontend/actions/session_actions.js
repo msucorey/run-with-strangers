@@ -22,6 +22,7 @@ export const logout = () => dispatch => (
 
 export const demo = () => dispatch => (
   APIUtil.demo().then(user => dispatch(receiveCurrentUser(user)))
+  .then(hashHistory.push('/login'))
 );
 
 export const receiveCurrentUser = currentUser => ({

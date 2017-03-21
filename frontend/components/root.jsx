@@ -7,6 +7,7 @@ import HomeScrollContainer from './home_scroll/home_scroll_container';
 import CitySelectorView from './city/city_selector_view';
 import CityViewContainer from './city/city_view_container';
 import { clearErrors } from '../actions/session_actions';
+import { fetchCity} from '../actions/city_actions';
 
 const Root = ({ store }) => {
 
@@ -51,10 +52,17 @@ const Root = ({ store }) => {
     }
   };
 
+  const loadCity = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (currentUser && currentUser.city_id) {
+      store.dispatch(fetchCity(currentUser.city_id));
+    }
+  };
+
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
-        <Route path="/" component={ App }>
+        <Route onEnter={loadCity} path="/" component={ App }>
           <IndexRoute component={HomeScrollContainer} />
           <Route path="/login" component={ AuthFormContainer }
             onEnter={_redirectIfLoggedIn} onLeave={_clearErrors} />

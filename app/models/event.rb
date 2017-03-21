@@ -23,6 +23,8 @@ class Event < ApplicationRecord
   has_one :city,
     through: :user
 
+  has_many :attendings
+
   has_many :attendees,
     through: :attendings,
     source: :user

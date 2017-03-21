@@ -15,6 +15,9 @@ class AuthForm extends React.Component {
 
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
+			if (this.props.currentUser.city_id) {
+				this.props.fetchCity(this.props.currentUser.city_id);
+			}
 			this.props.router.push("/");
 		}
 	}
