@@ -25,6 +25,10 @@ export const demo = () => dispatch => (
   .then(hashHistory.push('/login'))
 );
 
+export const refreshUser = (id) => dispatch => (
+  APIUtil.refresh(id).then(user => dispatch(receiveCurrentUser(user)))
+);
+
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser

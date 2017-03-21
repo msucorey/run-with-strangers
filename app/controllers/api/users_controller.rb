@@ -25,7 +25,7 @@ class Api::UsersController < ApplicationController
   def user_params
     params.require(:user)
       .permit(:username, :email, :password, :city_id, :is_host,
-              :host_image_url, :host_intro, :facebook_url, :twitter_url)
+              :host_image_url, :host_intro, :facebook_url, :twitter_url, run_date_ids: [])
   end
 
 end

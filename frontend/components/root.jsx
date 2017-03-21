@@ -6,7 +6,7 @@ import AuthFormContainer from './auth_form/auth_form_container';
 import HomeScrollContainer from './home_scroll/home_scroll_container';
 import CitySelectorView from './city/city_selector_view';
 import CityViewContainer from './city/city_view_container';
-import { clearErrors } from '../actions/session_actions';
+import { clearErrors, refreshUser } from '../actions/session_actions';
 import { fetchCity} from '../actions/city_actions';
 
 const Root = ({ store }) => {
@@ -29,6 +29,12 @@ const Root = ({ store }) => {
     if (store.getState().session.errors &&
     store.getState().session.errors.length > 0) {
       store.dispatch(clearErrors());
+    }
+  };
+
+  const _updateUser = () => {
+    if (store.getState().session.currentUser) {
+      store.dispatch(refreshUser(store.getState().session.currentUser.id));
     }
   };
 
@@ -69,9 +75,9 @@ const Root = ({ store }) => {
           <Route path="/signup" component={ AuthFormContainer }
             onEnter={_redirectIfLoggedIn} onLeave={_clearErrors}/>
           <Route path="/cities" component={CitySelectorView}
-            onEnter={_redirectIfHasCity} />
+            onEnter={_redirectIfHasCity} onLeave={_updateUser} />
           <Route path="/cities/:cityId" component={CityViewContainer}
-            onEnter={_redirectIfNoCity} />
+            onEnter={_redirectIfNoCity} onLeave={_updateUser} />
         </Route>
       </Router>
     </Provider>
