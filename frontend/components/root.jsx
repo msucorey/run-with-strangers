@@ -8,6 +8,7 @@ import CitySelectorView from './city/city_selector_view';
 import CityViewContainer from './city/city_view_container';
 import JoinHostContainer from './host/join_host_container';
 import CreateEventContainer from './host/create_event_container';
+import Dashboard from './dashboard/dashboard';
 import { clearErrors, refreshUser } from '../actions/session_actions';
 import { fetchCity, fetchCities } from '../actions/city_actions';
 import { fetchEvents } from '../actions/event_actions';
@@ -47,7 +48,7 @@ const Root = ({ store }) => {
     if (!currentUser) {
       replace('/login'); //not logged in
     } else if (city) {
-      replace(`/cities/${city.id}`);
+      replace(`/cities/500`);
     }
   };
 
@@ -105,6 +106,8 @@ const Root = ({ store }) => {
             onEnter={_redirectIfAlreadyHost} onLeave={_updateUser} />
           <Route path="/hostrun" component={ CreateEventContainer }
             onEnter={_redirectIfNotHost} onLeave={_updateUser} />
+          <Route path="/profile" component={ Dashboard }
+            onEnter={_ensureLoggedIn} />
         </Route>
       </Router>
     </Provider>
