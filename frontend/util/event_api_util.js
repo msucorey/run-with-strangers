@@ -12,6 +12,13 @@ export const getEvent = (id) => {
   });
 };
 
+export const destroyEvent = (id) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/events/${id}`
+  });
+};
+
 export const createEvent = (event) => {
   return $.ajax({
     method: 'POST',

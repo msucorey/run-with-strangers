@@ -48,6 +48,7 @@ slow = Event.find_by_details("slow one").id
 convo = Event.find_by_details("conversation jog").id
 fun = Event.find_by_details("fun run").id
 
+Attending.delete_all
 Attending.create!(user_id: joe, event_id: fast)
 Attending.create!(user_id: jane, event_id: fast)
 Attending.create!(user_id: bob, event_id: fast)

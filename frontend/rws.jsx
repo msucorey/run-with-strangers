@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import { fetchEvents } from './actions/event_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -13,5 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
   window.store = store;
+  window.fetchEvents = fetchEvents;
   ReactDOM.render(<Root store={ store }/>, root);
 });

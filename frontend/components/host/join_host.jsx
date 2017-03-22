@@ -18,9 +18,7 @@ class JoinHost extends React.Component {
       method: 'PATCH',
       url: '/api/user',
       data: { user }
-    });
-    this.props.refreshUser(this.props.user.id);
-    this.props.router.push('/hostrun');
+    }).then(() => this.props.refreshUser(this.props.user.id)).then(() => this.props.router.push('/hostrun'));
   }
 
   render() {

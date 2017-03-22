@@ -1,0 +1,29 @@
+$lightest-gray: #f7f7f5;
+$light-gray: #e2e2e2;
+$gray: #999;
+$dark-gray: #6f6f6f;
+
+$lightest-blue: #f0f8fc;
+$light-blue: #6288a5;
+$blue: #326891;
+$dark-blue: #4d7b9f;
+$darkest-blue: #265e8b;
+
+.event-input {
+  display: block;
+  margin: 0 0 0.8125em 0;
+  padding: 1em;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: none;
+  border: 1px solid #DDD;
+  height: 30px;
+  font-size: 15px;
+}
+
+.host-events {
+  background: $light-blue;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}

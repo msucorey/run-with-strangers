@@ -8,6 +8,7 @@ class EventTile extends React.Component {
 		this.state = {
       email: this.props.user.email,
       run_date_ids: this.props.user.run_dates.map(Object => (Object.id)),
+			event_ids: this.props.user.events.map(Object => (Object.id)),
 			attendees: this.props.event.attendees.length
     };
     this.addRunDate = this.addRunDate.bind(this);
@@ -66,7 +67,9 @@ class EventTile extends React.Component {
 		}
 
 		if (event) {
-			if (this.state.run_date_ids.includes(event.id)) {
+			if (this.state.event_ids.includes(event.id)) {
+				button = <button>MY EVENT</button>;
+			}	else if (this.state.run_date_ids.includes(event.id)) {
 	    	button = <button onClick={this.removeRunDate}>CANCEL BUTTON{this.state.attendees}</button>;
 			} else if (event.attendees.length > 5) {
 				button = <button>FULL BUTTON{this.state.attendees}</button>;

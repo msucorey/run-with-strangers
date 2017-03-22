@@ -28,6 +28,11 @@ export const editEvent = (event) => dispatch => (
   .then(nevent => dispatch(receiveEvent(nevent)))
 );
 
+export const cancelEvent = (id) => dispatch => (
+  APIUtil.destroyEvent(id)
+  .then(event => dispatch(receiveEvent(event)))
+);
+
 const receiveEvents = events => ({
   type: RECEIVE_EVENTS,
   events

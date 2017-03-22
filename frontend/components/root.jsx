@@ -9,7 +9,8 @@ import CityViewContainer from './city/city_view_container';
 import JoinHostContainer from './host/join_host_container';
 import CreateEventContainer from './host/create_event_container';
 import { clearErrors, refreshUser } from '../actions/session_actions';
-import { fetchCity} from '../actions/city_actions';
+import { fetchCity, fetchCities } from '../actions/city_actions';
+import { fetchEvents } from '../actions/event_actions';
 
 const Root = ({ store }) => {
 
@@ -57,6 +58,26 @@ const Root = ({ store }) => {
       replace('/login'); //not logged in
     } else if (!city) {
       replace('/cities');//no city chosen
+    } else {
+      store.dispatch(fetchEvents(city.id));
+    }
+  };
+
+  const _redirectIfAlreadyHost = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/login');
+    } else if (currentUser.is_host) {
+      replace('/hostrun');
+    }
+  };
+
+  const _redirectIfNotHost = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/login');
+    } else if (!currentUser.is_host) {
+      replace('/hosting');
     }
   };
 
@@ -80,8 +101,10 @@ const Root = ({ store }) => {
             onEnter={_redirectIfHasCity} onLeave={_updateUser} />
           <Route path="/cities/:cityId" component={CityViewContainer}
             onEnter={_redirectIfNoCity} onLeave={_updateUser} />
-          <Route path="/hosting" component={ JoinHostContainer } />
-          <Route path="/hostrun" component={ CreateEventContainer } />
+          <Route path="/hosting" component={ JoinHostContainer }
+            onEnter={_redirectIfAlreadyHost} onLeave={_updateUser} />
+          <Route path="/hostrun" component={ CreateEventContainer }
+            onEnter={_redirectIfNotHost} onLeave={_updateUser} />
         </Route>
       </Router>
     </Provider>

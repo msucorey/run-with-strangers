@@ -13,9 +13,9 @@ const defaultState = {
 const EventReducer = (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_EVENTS:
-      return merge({}, state, { events: action.events });
+      return merge({}, {event: state.event}, { events: action.events });
     case RECEIVE_EVENT:
-      return merge({}, state, { event: action.event });
+      return merge({}, {events: state.events}, { event: action.event });
     case RESET_STATE:
       return defaultState;
     default:

@@ -15,6 +15,7 @@ class CreateEvent extends React.Component {
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteEvent = this.deleteEvent.bind(this);
   }
 
   componentDidMount() {
@@ -27,48 +28,69 @@ class CreateEvent extends React.Component {
 		});
 	}
 
+  deleteEvent(id) {
+    return e => {
+      this.props.cancelEvent(id);
+      setTimeout(()=>(this.props.router.push('/hosting')), 50);
+    };
+  }
+
   handleSubmit(e) {
 		e.preventDefault();
 		const event = this.state;
 		this.props.newEvent(event);
+    this.setState({host_id: this.props.user.id, details: "",
+                   address: "", date: "", time: ""});
+    setTimeout(() => (this.props.router.push('/hosting')), 50);
 	}
 
   render() {
 
     const hostEvents = (
       this.props.user.events.map(event => (
-        <p key={event.id}>{event.details}</p>
+        <div key={event.id}>
+          <p>{event.details}</p>
+          <button onClick={this.deleteEvent(event.id)}>DELETE EVENT</button>
+        </div>
       )));
 
     return (
-      <div>create event
-        <form onSubmit={this.handleSubmit}>
-
-					<div>
-						<input type="text"
+      <div className="auth-form">
+        <form onSubmit={this.handleSubmit}
+          className="login-form-box">
+          <h2 className="auth-greeting">Host a Run!</h2>
+          <p>Fill out the details below and your run will be immedately advertised.</p>
+          <p>First six people can join you.  Early runner gets the worm!</p>
+          <br/>
+					<div className="login-form">
+						<input type="text" className="event-input"
 							value={this.state.details}
 							onChange={this.update("details")}
 							placeholder="Details (pace, purpose, etc.)" />
 						<br/>
-							<input type="address"
-								value={this.state.password}
+							<input type="address" className="event-input"
+								value={this.state.address}
 								onChange={this.update("address")}
-								placeholder="Be specific...landmarks are good"/>
+								placeholder="Location (be specific!)"/>
 						<br/>
-              <input type="date"
+              <input className="auth-input" type="date"
                 value={this.state.date}
                 onChange={this.update("date")}/>
             <br/>
-              <input type="time"
+              <input type="time" className="auth-input"
                 value={this.state.time}
                 onChange={this.update("time")}/>
             <br/>
-						<input type="submit"
+						<input type="submit" className="auth-submit"
 							value="Submit"/>
 						<br/>
 					</div>
 				</form>
-        {hostEvents}
+        <div className="host-events">
+          <p>My events</p>
+          {hostEvents}
+          <p>See Dashboard for more details</p>
+        </div>
       </div>
     );
   }

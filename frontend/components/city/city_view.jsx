@@ -56,7 +56,12 @@ class CityView extends React.Component {
         <p>conversations? Before each of them were invited to community, they were attendees</p>
         <p>that fed their run times with their questions, open-mindedness, and presence.</p>
         <br/>
-        <div>HostThumbs</div>
+        <div className="chg-home-city">
+          <ul>
+            <li>Does this sound like you?</li>
+            <li><Link to="/hosting" className="auth-link">Become a host today!</Link></li>
+          </ul>
+        </div>
       </div>
     </div>;
 
