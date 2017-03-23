@@ -48,9 +48,11 @@ class CreateEvent extends React.Component {
 
     const hostEvents = (
       this.props.user.events.map(event => (
-        <div key={event.id}>
-          <p>{event.details}</p>
-          <button onClick={this.deleteEvent(event.id)}>DELETE EVENT</button>
+        <div className="event-tile" key={event.id}>
+          <div>
+            <p>{event.details}</p>
+            <button onClick={this.deleteEvent(event.id)}>DELETE EVENT</button>
+          </div>
         </div>
       )));
 
@@ -87,9 +89,12 @@ class CreateEvent extends React.Component {
 					</div>
 				</form>
         <div className="host-events">
-          <p>My events</p>
-          {hostEvents}
-          <p>See Dashboard for more details</p>
+          <h2>My events</h2>
+            <div className="ind-host-events">
+              {hostEvents}
+            </div>
+          <br/>
+          <p>See <Link className="auth-link" to="/profile">Dashboard</Link> for more details</p>
         </div>
       </div>
     );

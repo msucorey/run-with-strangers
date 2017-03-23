@@ -12,17 +12,69 @@ $darkest-blue: #265e8b;
 .dash-signup-btn {
   background-color: $light-blue;
   border-radius: 10px;
-  margin-left: 20px;
   margin-bottom: 100px;
   color: white;
   display: inline-block;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1;
   padding: 1em 1.5em;
-  margin: 0 0 0.8125em 0;
+  margin: 0 auto;
   letter-spacing: 2px;
   text-decoration: none;
   align: center;
-  width: 50%;
+  width: 60%;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dashboard-sidebar {
+  padding: 20px;
+  width: 30%;
+  margin-left: 20px;
+}
+
+.dashboard-events {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.host-events {
+  padding: 10px;
+  margin: 20px;
+  width: 500px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ind-host-events {
+  display: flex;
+  flex-direction: row;
+}
+
+.big-dotted-btn {
+  border: dotted black;
+  width: 250px;
+}
+
+.big-dtd-btn-txt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  text-align: center;
+}
+.big-dtd-btn-txt h1 {
+  margin: 0 auto;
+  font-size: 50px;
+}
+.big-dtd-btn-txt h3 {
+  text-align: center;
+  margin: 5px;
+  font-size: 25px;
 }

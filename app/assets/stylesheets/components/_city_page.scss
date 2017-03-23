@@ -40,6 +40,7 @@ $darkest-blue: #265e8b;
 
 .chg-home-city {
   display: flex;
+  border-radius: 10px;
   flex-direction: column;
   justify-content: center;
   height: 50px;
@@ -50,11 +51,15 @@ $darkest-blue: #265e8b;
 }
 
 .city-events {
+  width: 550px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .event-tile {
-  width: 30%;
+  border-radius: 10px;
+  width: 150px;
   background: $gray;
+  margin: 10px auto;
 }

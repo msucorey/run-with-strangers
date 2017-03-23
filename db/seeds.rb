@@ -6,11 +6,11 @@ User.create!(
 )
 
 City.delete_all
-City.create!(name: "SF / BAY AREA", image_url: "https://www.wired.com/wp-content/uploads/2016/06/san-francisco-airbnb-142835466.jpg"
+City.create!(name: "SF / BAY AREA", image_url: "https://res.cloudinary.com/appacademy/image/upload/v1490218423/sanfranhires_o8xvdu.jpg"
 )
-City.create!(name: "CHICAGO", image_url: "https://d3qi0qp55mx5f5.cloudfront.net/www/i/homepage/spotlight/urban-chicago-spotlight.jpg"
+City.create!(name: "CHICAGO", image_url: "https://res.cloudinary.com/appacademy/image/upload/v1490218709/chicago_jm7drz.jpg"
 )
-City.create!(name: "NYC", image_url: "https://cdn.history.com/sites/2/2013/12/new-york-city-H.jpeg"
+City.create!(name: "NYC", image_url: "https://res.cloudinary.com/appacademy/image/upload/v1490218860/nyhighres_npsi1k.jpg"
 )
 san_fran = City.find_by_name("SF / BAY AREA").id
 

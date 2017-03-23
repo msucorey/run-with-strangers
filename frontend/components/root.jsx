@@ -8,7 +8,7 @@ import CitySelectorView from './city/city_selector_view';
 import CityViewContainer from './city/city_view_container';
 import JoinHostContainer from './host/join_host_container';
 import CreateEventContainer from './host/create_event_container';
-import Dashboard from './dashboard/dashboard';
+import DashboardContainer from './dashboard/dashboard_container';
 import { clearErrors, refreshUser } from '../actions/session_actions';
 import { fetchCity, fetchCities } from '../actions/city_actions';
 import { fetchEvents } from '../actions/event_actions';
@@ -19,6 +19,8 @@ const Root = ({ store }) => {
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('/login');
+    } else {
+      store.dispatch(refreshUser(store.getState().session.currentUser.id));
     }
   };
 
@@ -106,7 +108,7 @@ const Root = ({ store }) => {
             onEnter={_redirectIfAlreadyHost} onLeave={_updateUser} />
           <Route path="/hostrun" component={ CreateEventContainer }
             onEnter={_redirectIfNotHost} onLeave={_updateUser} />
-          <Route path="/profile" component={ Dashboard }
+          <Route path="/profile" component={ DashboardContainer }
             onEnter={_ensureLoggedIn} />
         </Route>
       </Router>

@@ -40,14 +40,16 @@ class EventTile extends React.Component {
 		this.state.attendees -= 1;
 		const email = this.state.email;
 		this.setState({email: email, run_date_ids: newList});
-		const user = { email: this.state.email, run_date_ids: this.state.run_date_ids};
-		this.props.refreshUser(this.props.user.id);
+		if (newList.length === 0) {
+			newList = [""];
+		}
+		const user = { email: this.state.email, run_date_ids: newList};
 		this.props.fetchEvent(this.props.event.id).then(() => (
 		$.ajax({
 			method: 'PATCH',
 			url: '/api/user',
 			data: { user }
-		})))
+		}))).then(() => this.props.refreshUser(this.props.user.id))
 		.then(() => (this.props.router.push(`/cities`)));
 	}
 
@@ -70,25 +72,25 @@ class EventTile extends React.Component {
 			if (this.state.event_ids.includes(event.id)) {
 				button = <button>MY EVENT</button>;
 			}	else if (this.state.run_date_ids.includes(event.id)) {
-	    	button = <button onClick={this.removeRunDate}>CANCEL BUTTON{this.state.attendees}</button>;
+	    	button = <button onClick={this.removeRunDate}>CANCEL</button>;
 			} else if (event.attendees.length > 5) {
-				button = <button>FULL BUTTON{this.state.attendees}</button>;
+				button = <button>FULL</button>;
 			} else {
-				button = <button onClick={this.addRunDate}>JOIN BUTTON{this.state.attendees}</button>;
+				button = <button onClick={this.addRunDate}>JOIN</button>;
 			}
 		}
 
 		const content = event === null ? <div></div> :
-			<div className="event-tile">
+			<div>
 				<p>{event.details}</p>
 				<p>{event.address}</p>
 				<p>{event.date}</p>
-				<p>{event.time}</p>
+				<p>{event.time.substring(11,16)}</p>
 				{button}
 			</div>;
 
 		return (
-			<div>
+			<div className="event-tile">
 			{content}
     	</div>
 		);

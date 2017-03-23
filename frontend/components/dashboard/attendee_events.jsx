@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import EventTileContainer from '../event/event_tile_container';
+import EventThumbContainer from '../event/event_thumb_container';
 
 class AttendeeEvents extends React.Component {
 	constructor(props) {
@@ -8,21 +8,23 @@ class AttendeeEvents extends React.Component {
 	}
 
 	componentDidMount() {
-    //nothing
+    this.props.refreshUser(this.props.user.id);
 	}
 
 	render() {
 
 		const attendeeEvents = (
-      this.props.user.events.map(event => (
-				<EventThumb event={event} key={event.id}
-          user={this.props.user} buttonType="cancel reservation" />
+      this.props.user.run_dates.map(event => (
+				<EventThumbContainer event={event} key={event.id}
+           buttonType="cancel reservation" />
 			))
 		);
 
+		const text = this.props.user.run_dates.length > 0 ? "Run Times You're Attending" : null;
+
 		return (
-			<div className="city-events">
-        Run Times You're Attending
+			<div className="host-events">
+        <h2>{text}</h2>
 				{attendeeEvents}
 			</div>
     );
