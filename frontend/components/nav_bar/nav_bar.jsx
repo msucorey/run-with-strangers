@@ -86,7 +86,7 @@ class NavBar extends React.Component {
 		return (
 			<div className="nav-bar">
         <div className="left-nav">
-					<img className="icon" src="http://res.cloudinary.com/appacademy/image/upload/v1489884292/rwsicon_lj2vxq.png" />
+					<img className="icon" src="https://res.cloudinary.com/appacademy/image/upload/v1489884292/rwsicon_lj2vxq.png" />
           <Link className="logo" to="/">
             Run With Strangers
           </Link>
