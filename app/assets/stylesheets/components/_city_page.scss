@@ -63,3 +63,35 @@ $darkest-blue: #265e8b;
   background: $gray;
   margin: 10px auto;
 }
+
+.event-details {
+  font-weight: bold;
+  height: 20px;
+  margin-bottom: 14px;
+}
+.event-address {
+  height: 10px;
+  margin-bottom: 15px;
+}
+
+.pic-ref {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+}
+.host-pic {
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
+  width: 40px;
+  height: auto;
+}
+.host-pic-thumb {
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+  width: 40px;
+  height: auto;
+}

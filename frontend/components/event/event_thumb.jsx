@@ -50,15 +50,16 @@ class EventThumb extends React.Component {
 		if (buttonType === "cancel event") {
 				button = <button onClick={this.cancelEvent(event.id)}>CANCEL EVENT</button>;
 		}	else if (buttonType === "cancel reservation") {
-	    	button = <button onClick={this.removeRunDate(event.id)}>CANCEL RESERVATION
+	    	button = <button onClick={this.removeRunDate(event.id)}>CANCEL
 				</button>;
 		}
 
 		const content = event === null ? <div></div> :
 			<div className="event-tile">
-				<div>
-					<p>{event.details}</p>
-					<p>{event.address}</p>
+				<div className="pic-ref">
+					<img className="host-pic-thumb" src={event.host_image} />
+					<p className="event-details">{event.details}</p>
+					<p className="event-address">{event.address}</p>
 					<p>{event.date}</p>
 					<p>{event.time.substring(11,16)}</p>
 					{button}

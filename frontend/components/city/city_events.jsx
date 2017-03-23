@@ -8,7 +8,6 @@ class CityEvents extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log("mounting CityEvents");
     this.props.fetchEvents(this.props.city.id);
 		setTimeout(() => (true), 50);
 	}

@@ -11,10 +11,13 @@ const CitySelectorView = () => (
         updates relevant to you!</p>
     </div>
     <div className="major-city-container">
-      <h2>We're building communities here + HOUSE ICON</h2>
+      <div className="icon-caption">
+        <h2>We're building communities here </h2>
+        <img src="https://res.cloudinary.com/appacademy/image/upload/v1490288154/houseicon_vkokzy.svg"></img>
+      </div>
       <h4>You should be able to sign up for a run time today!</h4>
       <MajorCitySelectorContainer/>
-    </div>      
+    </div>
       <MinorCityMenuContainer/>
   </div>
 );

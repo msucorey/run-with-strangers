@@ -17,12 +17,12 @@ class EventTile extends React.Component {
 
   addRunDate(e) {
     e.preventDefault();
-    let newList = this.state.run_date_ids;
+    let newList = this.props.user.run_dates.map(Object => (Object.id));
 		newList.push(this.props.event.id);
 		this.state.attendees += 1;
 		const email = this.state.email;
 		this.setState({email: email, run_date_ids: newList});
-		const user = { email: this.state.email, run_date_ids: this.state.run_date_ids};
+		const user = { email: this.state.email, run_date_ids: newList};
 		this.props.refreshUser(this.props.user.id);
     this.props.fetchEvent(this.props.event.id).then(() => (
     $.ajax({
@@ -35,7 +35,7 @@ class EventTile extends React.Component {
 
 	removeRunDate(e) {
 		e.preventDefault();
-		let newList = this.state.run_date_ids;
+		let newList = this.props.user.run_dates.map(Object => (Object.id));
 		newList = newList.filter(el => (el !== this.props.event.id));
 		this.state.attendees -= 1;
 		const email = this.state.email;
@@ -81,9 +81,10 @@ class EventTile extends React.Component {
 		}
 
 		const content = event === null ? <div></div> :
-			<div>
-				<p>{event.details}</p>
-				<p>{event.address}</p>
+			<div className="pic-ref">
+				<img className="host-pic" src={event.host_image} />
+				<p className="event-details">{event.details}</p>
+				<p className="event-address">{event.address}</p>
 				<p>{event.date}</p>
 				<p>{event.time.substring(11,16)}</p>
 				{button}

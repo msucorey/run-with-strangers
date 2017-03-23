@@ -25,7 +25,9 @@ class AttendeeEvents extends React.Component {
 		return (
 			<div className="host-events">
         <h2>{text}</h2>
-				{attendeeEvents}
+				<div className="ind-host-events">
+					{attendeeEvents}
+				</div>
 			</div>
     );
 	}

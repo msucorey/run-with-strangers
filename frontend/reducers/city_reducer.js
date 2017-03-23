@@ -13,7 +13,6 @@ const defaultState = {
 const CityReducer = (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_CITIES:
-      console.log("receiving cities");
       return merge({}, state, { cities: action.cities });
     case RECEIVE_CITY:
       return merge({}, state, { city: action.city });

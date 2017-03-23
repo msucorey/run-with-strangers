@@ -56,8 +56,12 @@ $darkest-blue: #265e8b;
   display: flex;
   flex-direction: column;
   background-color: $light-gray;
+  padding: 20px;
 }
-
 .mid-page-content h1 {
-  background-color: $light-gray;
+}
+.mid-page-content h2 {
+}
+.mid-page-content p {
+  font-size: 20px;
 }

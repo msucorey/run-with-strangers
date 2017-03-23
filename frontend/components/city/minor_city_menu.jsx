@@ -4,7 +4,10 @@ import { Link, withRouter } from 'react-router';
 const MinorCityMenu = ({ user }) => (
 
   <div className="minor-city-menu">
-    <h2>We'll get here eventually + PLANE ICON</h2>
+    <div className="icon-caption">
+      <h2>We'll get here eventually </h2>
+      <img src="https://res.cloudinary.com/appacademy/image/upload/v1490288137/planeicon_x14rkg.svg"></img>
+    </div>
     <h4>For now, find and set your home city.  Well make sure
       you know when Run With Strangers is coming your way!</h4>
     <button className="new-city-btn"

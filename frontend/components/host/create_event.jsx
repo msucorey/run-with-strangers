@@ -56,6 +56,8 @@ class CreateEvent extends React.Component {
         </div>
       )));
 
+    const noEventsText = this.props.user.events.length === 0 ? "You aren't hosting any events!" : null;
+
     return (
       <div className="auth-form">
         <form onSubmit={this.handleSubmit}
@@ -89,11 +91,13 @@ class CreateEvent extends React.Component {
 					</div>
 				</form>
         <div className="host-events">
-          <h2>My events</h2>
+          <h2>My events (summary)</h2>
             <div className="ind-host-events">
               {hostEvents}
             </div>
           <br/>
+          <p>{noEventsText}</p>
+          <p>Host an event by submitting form on the left.</p>
           <p>See <Link className="auth-link" to="/profile">Dashboard</Link> for more details</p>
         </div>
       </div>

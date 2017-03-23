@@ -36,6 +36,9 @@ $darkest-blue: #265e8b;
   width: 30%;
   margin-left: 20px;
 }
+.dashboard-sidebar h2 {
+  color: $darkest-blue;
+}
 
 .dashboard-events {
   margin-top: 20px;
@@ -70,11 +73,11 @@ $darkest-blue: #265e8b;
   text-align: center;
 }
 .big-dtd-btn-txt h1 {
-  margin: 0 auto;
+  margin: 0 auto 12px auto;
   font-size: 50px;
 }
 .big-dtd-btn-txt h3 {
   text-align: center;
-  margin: 5px;
+  margin: 10px;
   font-size: 25px;
 }
