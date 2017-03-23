@@ -48,7 +48,7 @@ class EventThumb extends React.Component {
 
 		let button = <div></div>;
 		if (buttonType === "cancel event") {
-				button = <button onClick={this.cancelEvent(event.id)}>CANCEL EVENT</button>;
+				button = <button onClick={this.cancelEvent(event.id)}>DROP OUT</button>;
 		}	else if (buttonType === "cancel reservation") {
 	    	button = <button onClick={this.removeRunDate(event.id)}>CANCEL
 				</button>;

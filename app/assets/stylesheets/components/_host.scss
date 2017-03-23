@@ -40,3 +40,27 @@ $darkest-blue: #265e8b;
   flex-wrap: wrap;
   padding: 10px;
 }
+
+.join-host-page {
+  padding: 20px;
+}
+.join-host-page ul {
+  list-style: initial;
+  margin-left: 20px;
+}
+.host-splash {
+  text-align: center;
+}
+.host-splash h1 {
+  color: $blue;
+}
+
+.iminbtn-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#im-in-btn {
+  margin: auto 20px;
+  width: 50%;
+}
