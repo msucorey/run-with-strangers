@@ -6,7 +6,7 @@
 
 ## Features and Implementation
 
-Run With Strangers (RWS) is a web application inspired by Tea With Strangers.  It utilizes Ruby on Rails with a PostgreSQL database handles for back end operations while React.js with a Redux architectural framework handles front end presentation and user interface.
+Run With Strangers (RWS) is a web application inspired by Tea With Strangers.  It utilizes Ruby on Rails with a PostgreSQL database for back end operations while React.js with a Redux architectural framework handles front end presentation and user interface.
 
 ### Minimum Viable Product (MVP) Features
 - [ ] New account creation, login, and guest/demo login
@@ -22,6 +22,7 @@ Essentially, the site brings users and hosts together through hosted events that
 ![wireframe]
 
 [wireframe]: https://res.cloudinary.com/appacademy/image/upload/v1490374433/city-select_mx4tnu.png "CitySelector wireframe"
+Figure 1: wireframe for CitySelectorView
 
 ### Data Architecture
 
@@ -44,7 +45,7 @@ resources :events, only: [:show, :create, :update, :destroy]
 
 With just the right amount of information front-loaded from the back end, React does the work up front of making sure the asynchronous database callbacks are transparent to the user.
 
-A powerful example of this is when the User RSVPs or cancels a previous RSVP for an Event on the City page.  React components use a combination of global state (Redux), local state, and individual "props" to rendered components to ensure the user sees real time update and visual interaction regardless of how slow the internet connection is to the backend database.
+A powerful example of this is when the user RSVPs to or cancels a previous RSVP for an Event on the City page.  React components use a combination of global state (Redux), local state, and individual "props" to rendered components to ensure the user sees real time update and visual interaction regardless of how slow the internet connection is to the backend database.
 
 ```javascript
 $.ajax({
@@ -55,7 +56,7 @@ $.ajax({
 .then(this.props.router.push(`/profile`));
 ```
 
-This call to update a User's ```run_date_ids``` may take hundreds of milliseconds or more, but the React component locally tracks its own mirroring state attribute and updates the view instantly.  When the callback does complete, the component will re-render based on a change in props, resetting its own state to ground truth.  All this is transparent to the user.
+This call to update a User's ```run_date_ids``` may take hundreds of milliseconds or more, but the React component locally tracks its own mirroring state attribute and updates the view instantly.  When the callback does complete, the component will re-render based on a change in props, resetting its own state to database ground truth.  All this is transparent to the user.
 
 ## Future Directions for the Project
 
