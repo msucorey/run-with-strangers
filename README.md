@@ -1,6 +1,6 @@
 # Run With Strangers
 
-[Run With Strangers live][heroku]
+[Run With Strangers live on Heroku][heroku]
 
 [heroku]: https://run-with-strangers.herokuapp.com/#/
 
@@ -15,9 +15,11 @@ Run With Strangers (RWS) is a web application inspired by Tea With Strangers.  I
 - [ ] Join event in your city
 - [ ] Dashboard of joined/hosted events
 
+These were completed according to standards including modern security practices (encryption, passwords stored only as salted hashes, etc.).  Additional features and development are detailed below.
+
 ### Original Feature
 
-Essentially, the site brings users and hosts together through hosted events that are specified according to training level and outcome.  This ability to specify event attributes is where RWS takes a functional step forward from Tea With Strangers where events only differentiate by date/time/location.
+Essentially, the site concept is to users and hosts together through hosted events that are specified according to training level and outcome.  This ability to specify event attributes is where RWS takes a functional step forward from Tea With Strangers where events only differentiate by date/time/location.
 
 ![wireframe]
 
@@ -69,3 +71,11 @@ Runners looking for a run date will always factor "distance from here" in decidi
 ### Social Profiles
 
 Rather than having users create yet another running site profile, my user profiles will be a user selected aggregation of links to other sites.  Users will be able to start out with nothing more than a Facebook or Google profile.
+
+Keep moving.
+
+![letsrun]
+
+(https://run-with-strangers.herokuapp.com/#/)
+
+[letsrun]: https://res.cloudinary.com/appacademy/image/upload/v1490377359/lets-run_wkkjue.png
