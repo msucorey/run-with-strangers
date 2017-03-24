@@ -20,7 +20,8 @@ Run With Strangers (RWS) is a web application inspired by Tea With Strangers.  I
 Essentially, the site brings users and hosts together through hosted events that are specified according to training level and outcome.  This ability to specify event attributes is where RWS takes a functional step forward from Tea With Strangers where events only differentiate by date/time/location.
 
 ![wireframe]
-[wireframe]: http://res.cloudinary.com/appacademy/image/upload/v1490374433/city-select_mx4tnu.png "CitySelector wireframe"
+
+[wireframe]: https://res.cloudinary.com/appacademy/image/upload/v1490374433/city-select_mx4tnu.png "CitySelector wireframe"
 
 ### Data Architecture
 
