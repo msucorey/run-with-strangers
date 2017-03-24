@@ -4,10 +4,6 @@
 
 [heroku]: https://run-with-strangers.herokuapp.com/#/
 
-- Discussion of technologies used
-- Delve deep into ~2 features that show off your technical abilities.  Discuss both the challenges faced and your brilliant solutions.   
-- Code snippets to highlight your best code (markdown code snippets, NOT screenshots)
-
 ## Features and Implementation
 
 Run With Strangers (RWS) is a web application inspired by Tea With Strangers.  It utilizes Ruby on Rails with a PostgreSQL database handles for back end operations while React.js with a Redux architectural framework handles front end presentation and user interface.
