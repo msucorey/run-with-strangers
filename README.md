@@ -4,9 +4,32 @@
 
 [heroku]: https://run-with-strangers.herokuapp.com/#/
 
+- Discussion of technologies used
+- Delve deep into ~2 features that show off your technical abilities.  Discuss both the challenges faced and your brilliant solutions.   
+- Code snippets to highlight your best code (markdown code snippets, NOT screenshots)
+
+```ruby
+@events = City.find(params[:city_id]).events
+```
+```Ruby
+resources :cities, only: [:index, :show] do
+  resources :events, only: [:index]
+end
+resources :events, only: [:show, :create, :update, :destroy]
+```
+
+```javascript
+$.ajax({
+  method: 'PATCH',
+  url: '/api/user',
+  data: { user }
+}))).then(() => this.props.refreshUser(this.props.user.id))
+.then(this.props.router.push(`/profile`));
+```
+
 ## Features and Implementation
 
-Run With Strangers (RWS) is a web application inspired by Tea With Strangers.  Ruby on Rails with a PostgreSQL database handles back end operations while React.js with a Redux architectural framework handles front end presentation and user interface.
+Run With Strangers (RWS) is a web application inspired by Tea With Strangers.  It utilizes Ruby on Rails with a PostgreSQL database handles for back end operations while React.js with a Redux architectural framework handles front end presentation and user interface.
 
 ### Minimum Viable Product (MVP) Features
 - [ ] New account creation, login, and guest/demo login
@@ -27,9 +50,9 @@ Associations and join tables were built to handle the respective one-to-many and
 
 Rails functionality was leveraged to more intuitively fetch data from the back end.  For example, Events were indexed by Cities using a Cities/:cityid/:eventid route.  This enabled a leaner data load as, in this case for example, the only Events of concern are those particular to the City of the current User's session.
 
-![random-pic]
+![wireframe]
 
-[random-pic]: https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/03/1458289957powerful-images3.jpg "funny pic"
+[wireframe]: /docs/wireframes/city-select.png
 
 
 ## Future Directions for the Project

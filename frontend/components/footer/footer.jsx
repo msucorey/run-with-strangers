@@ -6,11 +6,17 @@ class Footer extends React.Component {
   constructor(props) {
     super(props);
     this.goHosting = this.goHosting.bind(this);
+    this.goCities = this.goCities.bind(this);
   }
 
   goHosting(e) {
     e.preventDefault();
     this.props.router.push("/hosting");
+  }
+
+  goCities(e) {
+    e.preventDefault();
+    this.props.router.push("/cities");
   }
 
   render() {
@@ -25,7 +31,7 @@ class Footer extends React.Component {
           <ul>
             <li><button>About</button></li>
             {hostingButton}
-            <li><button>Cities</button></li>
+            <li><button onClick={this.goCities}>Cities</button></li>
             <li><button>Facebook</button></li>
             <li><button>Twitter</button></li>
           </ul>
