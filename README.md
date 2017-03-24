@@ -19,7 +19,7 @@ These were completed according to standards including modern security practices 
 
 ### Original Feature
 
-Essentially, the site concept is to users and hosts together through hosted events that are specified according to training level and outcome.  This ability to specify event attributes is where RWS takes a functional step forward from Tea With Strangers where events only differentiate by date/time/location.
+Essentially, the site concept is to bring users and hosts together through hosted events that are specified according to training level and outcome.  This ability to specify event attributes is where RWS takes a functional step forward from Tea With Strangers where events only differentiate by date/time/location.
 
 ![wireframe]
 

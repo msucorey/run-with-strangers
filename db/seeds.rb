@@ -17,6 +17,7 @@ san_fran = City.find_by_name("SF / BAY AREA").id
 chi_town = City.find_by_name("CHICAGO").id
 nyc = City.find_by_name("NYC").id
 
+#san fran users
 User.create!(username: "joe", email: "joe", password: "strongpword", city_id: san_fran, host_image_url: Faker::Avatar.image)
 User.create!(username: "jane", email: "jane", password: "strongpword", city_id: san_fran, host_image_url: Faker::Avatar.image)
 User.create!(username: "bob", email: "bob", password: "strongpword", city_id: san_fran, host_image_url: Faker::Avatar.image)
@@ -27,6 +28,7 @@ User.create!(username: "ron", email: "ron", password: "strongpword", city_id: sa
 User.create!(username: "nancy", email: "nancy", password: "strongpword", city_id: san_fran, host_image_url: Faker::Avatar.image)
 User.create!(username: "eric", email: "eric", password: "strongpword", city_id: san_fran, host_image_url: Faker::Avatar.image)
 User.create!(username: "betty", email: "betty", password: "strongpword", city_id: san_fran, host_image_url: Faker::Avatar.image)
+#chicago users
 User.create!(username: "joec", email: "joec", password: "strongpword", city_id: chi_town, host_image_url: Faker::Avatar.image)
 User.create!(username: "janec", email: "janec", password: "strongpword", city_id: chi_town, host_image_url: Faker::Avatar.image)
 User.create!(username: "bobc", email: "bobc", password: "strongpword", city_id: chi_town, host_image_url: Faker::Avatar.image)
@@ -37,6 +39,7 @@ User.create!(username: "ronc", email: "ronc", password: "strongpword", city_id: 
 User.create!(username: "nancyc", email: "nancyc", password: "strongpword", city_id: chi_town, host_image_url: Faker::Avatar.image)
 User.create!(username: "ericc", email: "ericc", password: "strongpword", city_id: chi_town, host_image_url: Faker::Avatar.image)
 User.create!(username: "bettyc", email: "bettyc", password: "strongpword", city_id: chi_town, host_image_url: Faker::Avatar.image)
+#nyc users
 User.create!(username: "joen", email: "joen", password: "strongpword", city_id: nyc, host_image_url: Faker::Avatar.image)
 User.create!(username: "janen", email: "janen", password: "strongpword", city_id: nyc, host_image_url: Faker::Avatar.image)
 User.create!(username: "bobn", email: "bobn", password: "strongpword", city_id: nyc, host_image_url: Faker::Avatar.image)
