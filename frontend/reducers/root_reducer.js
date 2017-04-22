@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
 import SessionReducer from './session_reducer';
 import CityReducer from './city_reducer';

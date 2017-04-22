@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router';
 import EventThumb from '../event/event_thumb';
 
 class NoEvents extends React.Component {
-  //user
+  //user from rendering component
 	constructor(props) {
 		super(props);
 		this.goCities = this.goCities.bind(this);

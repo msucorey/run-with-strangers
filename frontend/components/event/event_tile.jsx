@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 
 class EventTile extends React.Component {
-	//user, event
+	//user from container, event from rendering component
 	constructor(props) {
 		super(props);
 		this.state = {

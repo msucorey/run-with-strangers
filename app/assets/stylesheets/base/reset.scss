@@ -1,5 +1,3 @@
-/* PHASE 0: Reset */
-
 html, body, header, nav, a,
 ul, li, strong, main, button, i,
 section, img, div, p, form,
@@ -29,10 +27,6 @@ img {
 }
 
 button {
-  /*
-  Get rid of native styling. Read more here:
-  http://css-tricks.com/almanac/properties/a/appearance/
-  */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
