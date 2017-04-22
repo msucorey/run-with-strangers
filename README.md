@@ -21,10 +21,10 @@ These were completed according to standards including modern security practices 
 
 Essentially, the site concept is to bring users and hosts together through hosted events that are specified according to training level and outcome.  This ability to specify event attributes is where RWS takes a functional step forward from Tea With Strangers where events only differentiate by date/time/location.
 
-![wireframe]
+![screenshot]
 
-[wireframe]: https://res.cloudinary.com/appacademy/image/upload/v1490374433/city-select_mx4tnu.png "CitySelector wireframe"
-Figure 1: wireframe for CitySelectorView
+[screenshot]: https://res.cloudinary.com/appacademy/image/upload/v1492899347/rws_screenshot.png "screenshot"
+Figure 1: landing page screenshot
 
 ### Data Architecture
 
@@ -75,7 +75,5 @@ Rather than having users create yet another running site profile, my user profil
 Keep moving.
 
 ![letsrun]
-
-(https://run-with-strangers.herokuapp.com/#/)
 
 [letsrun]: https://res.cloudinary.com/appacademy/image/upload/v1490377359/lets-run_wkkjue.png
