@@ -93,7 +93,7 @@ Event.create!(details: "slow one!", address: Faker::Address.street_name, date: F
 Event.create!(details: "conversation jog", address: Faker::Address.street_name, date: Faker::Date.forward(23), time: Faker::Time.forward(23, :evening), host_id: jane)
 Event.create!(details: "fun run!", address: Faker::Address.street_name, date: Faker::Date.forward(23), time: Faker::Time.forward(23, :evening), host_id: bob)
 #chicago events
-Event.create!(details: "bratwurst, run, bratwurst", address:
+Event.create!(details: "run 4 bratwurst", address:
 Faker::Address.street_name, date: Faker::Date.forward(23), time: Faker::Time.forward(23, :morning), host_id: joec)
 Event.create!(details: "beer run!", address: Faker::Address.street_name, date: Faker::Date.forward(23), time: Faker::Time.forward(23, :morning), host_id: joec)
 Event.create!(details: "Moms on the run", address: Faker::Address.street_name, date: Faker::Date.forward(23), time: Faker::Time.forward(23, :evening), host_id: janec)
@@ -114,7 +114,7 @@ slow = Event.find_by_details("slow one!").id
 convo = Event.find_by_details("conversation jog").id
 fun = Event.find_by_details("fun run!").id
 #chicago events
-brat = Event.find_by_details("bratwurst, run, bratwurst").id
+brat = Event.find_by_details("run 4 bratwurst").id
 beer = Event.find_by_details("beer run!").id
 moms = Event.find_by_details("Moms on the run").id
 paleo = Event.find_by_details("Paleo runners").id
