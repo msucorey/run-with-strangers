@@ -4,7 +4,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import Footer from './footer/footer';
 
 const App = ({ children }) => (
-  <div>
+  <div className="home-bkgd">
     <header>
       <NavBarContainer />
     </header>
